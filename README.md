@@ -22,7 +22,7 @@ You can also perform leave on out cross validation which has a test set of lengt
 
 This is the most basic way of using this.
 
-'''python
+```python
 #import first
 import nfoldcross as nfcv
 #get folds from nfcv. Provide X (Parameters) and Y (Labels)
@@ -35,20 +35,20 @@ for fold in folds:
     train(trainX, trainY)
     #your accuracy method here
     accuracy(testX, testY)
-'''
+```
 
 For memory improvements, a training method can be provided that will run after each fold is created. Then the fold will be destroyed.
 
-'''python
+```python
 #import first
 import nfoldcross as nfcv
 #get folds from nfcv. Provide X (Parameters) and Y (Labels) and your training method. Your training method should have parameters for trainX, trainX, trainY, testX, testY. Your training method should also be calculating and ouputting accuracy.
 folds = nfcv.generateCrossValidationSets(X, Y, trainingMethod=train)
-'''
+```
 
 To use Leave One Out Cross Validation. You can also provide a trainingMethod like above here. Providing a trainingMethod is highly reccomended since all folds will be of size len(X) each of which contains a copy of training and test sets.
 
-'''python
+```python
 #import first
 import nfoldcross as nfcv
 folds = nfcv.leaveOneOutCrossValidation(X, Y)
@@ -60,7 +60,7 @@ for fold in folds:
     train(trainX, trainY)
     #your accuracy method here
     accuracy(testX, testY)
-'''
+```
 
 ## Documentation
 
